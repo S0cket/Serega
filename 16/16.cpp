@@ -3,10 +3,10 @@
 typedef unsigned char byte;
 
 int main(void) {
-	byte a, b;
-	scanf("%hhd", &a);
+	int a, b = 0;
+	scanf("%d", &a);
 	b = ((a & 0xf0) >> 4) + ((a & 0x0f) << 4);
-	printf("%hhd\n", b);
+	printf("%d\n", b);
 	return 0;
 }
 
