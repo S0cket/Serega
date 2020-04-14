@@ -1,7 +1,5 @@
 #include <stdio.h>
 
-typedef unsigned char byte;
-
 int main(void) {
 	int a, b = 0;
 	scanf("%d", &a);
