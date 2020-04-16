@@ -1,10 +1,12 @@
-#include <stdio.h>
+#include <iostream>
+
+using namespace std;
 
 int main(void) {
 	int a, b = 0;
-	scanf("%d", &a);
+	cin >> a;
 	b = ((a & 0xf0) >> 4) + ((a & 0x0f) << 4);
-	printf("%d\n", b);
+	cout << b << endl;
 	return 0;
 }
 
