@@ -5,9 +5,10 @@
 using namespace std;
 
 const int n = 5;
-int a[n][n], count = 0;
+int a[n][n];
 
 int main(void) {
+	int count = 0;
 	srand(time(NULL));
 	for (int i = 0; i < n; i ++) {
 		for (int j = 0; j < n; j ++) {
