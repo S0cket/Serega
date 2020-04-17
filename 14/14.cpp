@@ -28,7 +28,7 @@ int main(void) {
 		for (int j = i; j < m - i; ++ j) {
 			if (arr[i][j] > ma)
 				ma = arr[i][j];
-			printf("%d\n", arr[i][j]);
+			//printf("%d\n", arr[i][j]);
 		}
 	}
 	printf("\n\n");
@@ -36,8 +36,9 @@ int main(void) {
 		for (int j = i; j < m - i; ++ j) {
 			if (arr[n - i - 1][j] > ma)
 				ma = arr[n - i - 1][j];
-			printf("%d\n", arr[n - i - 1][j]);
+			//printf("%d\n", arr[n - i - 1][j]);
 		}
 	}
+	printf("%d\n", ma);
 	return 0;
 }
