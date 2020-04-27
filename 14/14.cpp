@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include <algorithm>
 
 using namespace std;
 
@@ -10,35 +9,35 @@ int arr[n][m];
 
 int main(void) {
 	srand(time(NULL));
+	int n;
+	scanf("%d", &n);
+	int **arr = new int*[n];
 	for (int i = 0; i < n; ++ i) {
-		for (int j = 0; j < m; ++ j) {
+		arr[i] = new int[n];
+		for (int j = 0; j < n; ++ j) {
 			arr[i][j] = rand() % 100;
-			printf("%3d ", arr[i][j]);
+			printf("%4d ", arr[i][j]);
 		}
 		printf("\n");
 	}
-	int a = n / 2;
-	if (n % 2 == 0)
-		-- a;
-	int b = m / 2;
-	if (m % 2 == 0)
-		-- b;
-	int mid = min(a, b), ma = -1000;
+	//printf("\n\n\n");
+	int mid = (n - 1) / 2, m = 0;
 	for (int i = 0; i <= mid; ++ i) {
-		for (int j = i; j < m - i; ++ j) {
-			if (arr[i][j] > ma)
-				ma = arr[i][j];
+		for (int j = i; j < n - i; ++ j) {
+			if (arr[i][j] > m)
+				m = arr[i][j];
 			//printf("%d\n", arr[i][j]);
 		}
 	}
-	printf("\n\n");
-	for (int i = 0; i <= mid; ++ i) {
-		for (int j = i; j < m - i; ++ j) {
-			if (arr[n - i - 1][j] > ma)
-				ma = arr[n - i - 1][j];
-			//printf("%d\n", arr[n - i - 1][j]);
+	//printf("\n");
+	mid = n / 2;
+	for (int i = n - 1; i >= mid; -- i) {
+		for (int j = i; j >= n - i - 1; -- j) {
+			if (arr[i][j] > m)
+				m = arr[i][j];
+			//printf("%d\n", arr[i][j]);
 		}
 	}
-	printf("%d\n", ma);
+	printf("max = %d\n", m);
 	return 0;
 }
