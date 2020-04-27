@@ -38,6 +38,9 @@ int main(void) {
 			//printf("%d\n", arr[i][j]);
 		}
 	}
+	for (int i = 0; i < n; ++ i)
+		delete [] arr[i];
+	delete [] arr;
 	printf("max = %d\n", m);
 	return 0;
 }
