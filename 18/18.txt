@@ -50,4 +50,5 @@ f4 => f1
 		f4 << buf << " ";
 	f4.close();
 	f2.close();
+	return 0;
 }
